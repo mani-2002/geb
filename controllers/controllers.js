@@ -839,3 +839,15 @@ exports.getUserTransactions = (req, res) => {
     }
   });
 };
+
+exports.getAllAdmins = (req, res) => {
+  const query = `SELECT * FROM admin`;
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error Fetching Admin Data", err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+    res.json(results);
+  });
+};

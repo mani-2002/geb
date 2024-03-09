@@ -68,5 +68,6 @@ router.get(
   authenticateToken,
   userController.getUserTransactions
 );
+router.get("/admin", userController.getAllAdmins);
 
 module.exports = router;
